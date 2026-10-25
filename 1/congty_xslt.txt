@@ -1,0 +1,114 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <xsl:output method="html" encoding="UTF-8"
+                indent="yes"/>
+
+    <xsl:template match="/congty">
+        <html>
+            <head>
+                <title>Cong ty san xuat</title>
+
+                <style>
+                    body {
+                        font-family: Arial;
+                        text-align: center;
+                    }
+
+                    table {
+                        border-collapse: collapse;
+                        width: 60%;
+                        margin: 10px auto 30px auto;
+                    }
+
+                    th, td {
+                        border: 1px solid black;
+                        padding: 8px;
+                    }
+
+                    th {
+                        background-color: #dddddd;
+                    }
+
+                    h2 {
+                        text-align: center;
+                    }
+                </style>
+            </head>
+
+            <body>
+                <h2>CONG TY SAN XUAT</h2>
+
+                <xsl:for-each select="phong">
+
+                    <h3>
+                        Ma phong:
+                        <xsl:value-of select="@maphong"/>
+                    </h3>
+
+                    <p>
+                        <b>Dien thoai: </b>
+                        <xsl:value-of select="dienthoai"/>
+                    </p>
+
+                    <table>
+                        <tr>
+                            <th>STT</th>
+                            <th>Ma san pham</th>
+                            <th>Ten san pham</th>
+                            <th>Gia tien</th>
+                        </tr>
+
+                        <xsl:for-each select="sanpham">
+
+                            <xsl:sort select="giatien"
+                                      data-type="number"
+                                      order="ascending"/>
+
+                            <tr>
+                                <td>
+                                    <xsl:value-of select="position()"/>
+                                </td>
+
+                                <td>
+                                    <xsl:value-of select="masp"/>
+                                </td>
+
+                                <td>
+                                    <xsl:value-of select="tensp"/>
+                                </td>
+
+                                <td>
+                                    <xsl:choose>
+                                        <xsl:when test="giatien &gt; 700">
+                                            <span style="color: red">
+                                                <xsl:value-of select="giatien"/>
+                                            </span>
+                                        </xsl:when>
+
+                                        <xsl:when test="giatien &gt; 500">
+                                            <span style="color: green">
+                                                <xsl:value-of select="giatien"/>
+                                            </span>
+                                        </xsl:when>
+
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="giatien"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </td>
+                            </tr>
+
+                        </xsl:for-each>
+                    </table>
+
+                </xsl:for-each>
+
+            </body>
+        </html>
+    </xsl:template>
+
+</xsl:stylesheet>

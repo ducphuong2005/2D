@@ -1,0 +1,49 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="congty.xslt"?>
+
+<congty>
+    <phong maphong="P01">
+        <dienthoai>0234-232-423</dienthoai>
+
+        <sanpham>
+            <masp>SP01</masp>
+            <tensp>May tinh</tensp>
+            <giatien>200</giatien>
+        </sanpham>
+
+        <sanpham>
+            <masp>SP02</masp>
+            <tensp>Ban phim</tensp>
+            <giatien>600</giatien>
+        </sanpham>
+
+        <sanpham>
+            <masp>SP03</masp>
+            <tensp>Man hinh</tensp>
+            <giatien>800</giatien>
+        </sanpham>
+    </phong>
+
+    <phong maphong="P02">
+        <dienthoai>0987-654-321</dienthoai>
+
+        <sanpham>
+            <masp>SP04</masp>
+            <tensp>Chuot may tinh</tensp>
+            <giatien>150</giatien>
+        </sanpham>
+
+        <sanpham>
+            <masp>SP05</masp>
+            <tensp>Loa</tensp>
+            <giatien>550</giatien>
+        </sanpham>
+
+        <sanpham>
+            <masp>SP06</masp>
+            <tensp>May in</tensp>
+            <giatien>750</giatien>
+        </sanpham>
+    </phong>
+</congty>

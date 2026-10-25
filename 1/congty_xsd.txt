@@ -1,0 +1,71 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="congty">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="phong" minOccurs="2"
+                            maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <xs:element name="dienthoai">
+                                <xs:simpleType>
+                                    <xs:restriction
+                                        base="xs:string">
+                                        <xs:pattern
+                                            value="[0-9]{4}-[0-9]{3}-[0-9]{3}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="sanpham"
+                                        minOccurs="3"
+                                        maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+
+                                        <xs:element name="masp"
+                                                    type="xs:string"/>
+
+                                        <xs:element name="tensp">
+                                            <xs:simpleType>
+                                                <xs:restriction
+                                                    base="xs:string">
+                                                    <xs:minLength
+                                                        value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                        <xs:element name="giatien">
+                                            <xs:simpleType>
+                                                <xs:restriction
+                                                    base="xs:decimal">
+                                                    <xs:minInclusive
+                                                        value="100"/>
+                                                    <xs:maxInclusive
+                                                        value="900"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+
+                        <xs:attribute name="maphong"
+                                      type="xs:string"
+                                      use="required"/>
+
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
